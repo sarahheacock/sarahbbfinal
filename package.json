@@ -1,0 +1,55 @@
+{
+  "name": "heroku-cra-node",
+  "version": "1.0.0",
+  "homepage": ".",
+  "description": "How to use create-react-app with a custom Node API on Heroku",
+  "engines": {
+    "node": "6.11.x"
+  },
+  "scripts": {
+    "start": "node server",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "async": "^2.5.0",
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "cloudinary": "^1.9.0",
+    "config": "^1.26.1",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.14.1",
+    "jsonwebtoken": "^7.4.2",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.6",
+    "morgan": "^1.8.2",
+    "multer": "^1.3.0",
+    "multer-autoreap": "^0.1.3",
+    "node-slack": "0.0.7",
+    "nodemailer": "^4.1.0",
+    "nodemailer-mailgun-transport": "^1.3.5",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "stripe": "^4.24.1",
+    "twilio": "^3.6.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mars/heroku-cra-node.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "create-react-app",
+    "react"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.5.0"
+  }
+}

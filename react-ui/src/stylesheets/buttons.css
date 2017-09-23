@@ -1,0 +1,164 @@
+/*
+powder--#BFD8D2
+warm--#DF744A
+yellow--#BCB239
+peach--#FEDCD2
+*/
+
+.button {
+  border-radius: 5%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 1%;
+  border-width: 0px;
+  background-color: WhiteSmoke;
+  color: #626d71;
+  width: 50%;
+  max-width: 110px;
+}
+
+.button i{
+  padding-left: 3%;
+}
+
+.buttonLarge {
+  border-radius: 5%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 1%;
+  border-width: 0px;
+  background-color: WhiteSmoke;
+  color: #626d71;
+  width: 50%;
+  max-width: 160px;
+}
+
+
+.buttonLarge i{
+  padding-left: 3%;
+}
+
+.tabs{
+  padding-top: 5%;
+}
+
+.yellow{
+  color: #BCB239
+}
+
+.orange{
+  color: #DF744A
+}
+
+.fa-circle{
+  padding-right: 2%;
+}
+
+.button:hover{
+  background-color: #a5a58d;
+  /*color: WhiteSmoke;*/
+}
+
+.buttonLarge:hover{
+  background-color: #a5a58d;
+}
+
+.linkButton {
+  border-radius: 5%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  max-width: 300px;
+  margin: 1%;
+  margin-bottom: 2%;
+  border-width: 0px;
+}
+
+.linkButton i{
+  padding-left: 2%;
+}
+
+.smallLink {
+  margin: 1%;
+}
+
+.facebook{
+  background-color: #3b5998;
+  color: White;
+}
+
+.facebook:hover{
+  background-color: #324b81;
+  color: White;
+}
+
+.orangeButton {
+  background-color: #DF744A;
+  color: white;
+}
+
+.orangeButton:hover{
+  background-color: #d95926;
+}
+
+.blueButton {
+  background-color: #81b1a6;
+  color: white;
+}
+
+.blueButton:hover {
+  background-color: #578e81;
+}
+
+.blueButtonActive {
+  background-color: #578e81;
+  color: White;
+}
+
+.blueButtonInactive {
+  background-color: #578e81;
+  color: White;
+  opacity: 0.3;
+}
+
+.old {
+  opacity: 0.3;
+}
+
+.yellowButton {
+  /*background-color: #bcb239;*/
+  color: #DF744A;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #DF744A;
+  background-color: WhiteSmoke;
+}
+
+.yellowButton:hover{
+  color: #ad471f;
+  /*border-style: solid;
+  border-width: 2px;*/
+  border-color: #ad471f;
+  background-color: #f2f2f2;
+}
+
+.cancel {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #626d71;
+}
+
+.cancel:hover {
+  /*border-style: solid;
+  border-width: 2px;
+  border-color: #ad471f;*/
+  color: #2f3537;
+  border-color: #2f3537;
+  background-color: #f2f2f2;
+}
