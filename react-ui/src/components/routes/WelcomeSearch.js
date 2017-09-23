@@ -34,10 +34,11 @@ class WelcomeSearch extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState(this.state, () => {
+    // if(e) e.preventDefault();
+    this.setState({name: e.target.value}, () => {
       if(this.state.name.length >= 3){
         this.props.postData(`/user/${blogID}?token=${this.props.user.token}`, {
-          find: e.target.value
+          find: this.state.name
         });
       }
     });
