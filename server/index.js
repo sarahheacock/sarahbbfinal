@@ -44,13 +44,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/json'}));
 
-refreshRoutes.use(express.static(path.resolve(__dirname, '../react-ui/public')));
+refreshRoutes.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
 
 // Answer API requests.
 //===============================================================
 refreshRoutes.get('*', function(request, response) {
-  response.sendFile(path.resolve(__dirname, '../react-ui/public', 'index.html'));
+  response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
 });
 
 //=================ROUTES=======================================
