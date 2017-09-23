@@ -39,7 +39,7 @@ const Guide = (props) => {
           </Row>
           <Row className="clear-fix">
             <br />
-            <p className="paragraph">{d.p1}</p>
+            {d.p1.split("\n").map((p, i) => (<p key={`${i}guidep`} className="paragraph">{p}</p>))}
             <br />
             <div className="text-center">
               <EditButton

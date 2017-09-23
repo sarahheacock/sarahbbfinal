@@ -35,7 +35,7 @@ class Select extends React.Component {
   }
 
   componentDidMount(){
-    console.log("hi");
+    // console.log("hi");
     //this.props.getData(`/res/available/${this.props.data.reservation.start}/${this.props.data.reservation.end}/${this.props.data.reservation.guests}`)
     let url = "/res/available";
 

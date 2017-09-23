@@ -127,7 +127,7 @@ reservationRoutes.get('/page/:pageID/:month/:year', auth, (req, res, next) => {
         title: r.userID.email,
         event: {
           user: r.userID._id,
-          checkedIn: r.charged,
+          checkedIn: r.checkedIn,
           reminded: r.reminded,
           charged: r.charged
         }

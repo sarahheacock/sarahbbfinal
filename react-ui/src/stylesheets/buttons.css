@@ -14,7 +14,7 @@ peach--#FEDCD2
   margin: 1%;
   border-width: 0px;
   background-color: WhiteSmoke;
-  color: #626d71;
+  color: #983e1b;
   width: 50%;
   max-width: 110px;
 }
@@ -124,41 +124,43 @@ peach--#FEDCD2
 .blueButtonInactive {
   background-color: #578e81;
   color: White;
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 .old {
-  opacity: 0.3;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .yellowButton {
   /*background-color: #bcb239;*/
-  color: #DF744A;
+  color: #9c9330;
   border-style: solid;
-  border-width: 2px;
-  border-color: #DF744A;
-  background-color: WhiteSmoke;
+  border-width: 1px;
+  border-color: #9c9330;
+  background-color: #f4f4f1;
 }
 
 .yellowButton:hover{
-  color: #ad471f;
+  color: #756e24;
   /*border-style: solid;
   border-width: 2px;*/
-  border-color: #ad471f;
-  background-color: #f2f2f2;
+  border-color: #756e24;
+  background-color: #e9e9e2;
 }
 
 .cancel {
   border-style: solid;
-  border-width: 2px;
-  border-color: #626d71;
+  border-width: 1px;
+  border-color: #983e1b;
+  color: #983e1b;
 }
 
 .cancel:hover {
   /*border-style: solid;
   border-width: 2px;
   border-color: #ad471f;*/
-  color: #2f3537;
-  border-color: #2f3537;
-  background-color: #f2f2f2;
+  color: #6c2c13;
+  border-color: #6c2c13;
+  background-color: #e9e9e2;
 }

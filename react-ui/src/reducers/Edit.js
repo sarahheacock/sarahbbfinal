@@ -20,6 +20,7 @@ const Edit = function(title){
   const path = window.location.pathname;
   let location = path.split('/').filter((p) => { return p !== ''; });
   if(location.length === 0) location.push('home');
+  // else if(location[0] === "book") location[0] === "bookNow"
 
   this.message = '';
   this.location = location;
@@ -79,6 +80,7 @@ Edit.prototype = {
     if(title.includes("Sign Up")) url = "/user";
     if(title.includes("Room")) url = "/room";
     if(title.includes("Guide")) url = "/guide";
+    // if(title.includes("Book Now")) url = "/bookNow";
 
     if(title.includes("Delete Reservation")) url = `/cancel/${id}`;
     if(title.includes("Charge")) url = `/charge/${id}`;

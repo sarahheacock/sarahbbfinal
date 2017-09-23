@@ -5,6 +5,7 @@ import { Carousel } from 'react-bootstrap';
 import { Image } from 'cloudinary-react';
 
 import { cloudName } from '../../../../data/data';
+import Paragraph from './Paragraph';
 import EditButton from '../buttons/EditButton.js';
 
 const link = (cat) => {
@@ -56,10 +57,12 @@ const Room = (props) => {
 
       <div className="home">
         <div className="content">
-          <h3 className="pretty text-center">{data.title}</h3>
-          <p className="paragraph"><b>{data.b}</b></p>
-          <p className="paragraph">{data.p1}</p>
-          <br />
+          <Paragraph
+            cursive={data.title}
+            bold={data.b}
+            paragraph={data.p1}
+          />
+
           <div className="text-center">
             <h4 className="paragraph"><big>$</big>{`${data.cost}.`}<sup>00</sup><sub> per night</sub></h4>
             <h4 className="paragraph"><big>{data["maximum-occupancy"]}</big><sub> person max</sub></h4>

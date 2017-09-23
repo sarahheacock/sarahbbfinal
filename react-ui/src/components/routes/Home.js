@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PageHeader } from 'react-bootstrap';
+// import { PageHeader } from 'react-bootstrap';
 import { Image, CloudinaryContext, Transformation } from 'cloudinary-react';
 import { cloudName } from '../../../../data/data';
 
 import EditButton from '../buttons/EditButton.js';
+import Paragraph from './Paragraph';
 
 const Home = (props) => {
 
@@ -22,12 +23,13 @@ const Home = (props) => {
         Welcome Home
       </h1>
 
-      <PageHeader className="home-header"><span className="header-text">Home<hr /></span></PageHeader>
       <div className="home">
-        <div className="content text-center">
-          <h3 className="pretty">{props.data.title}</h3>
-          <b className="paragraph">{props.data.b}</b>
-          <p className="paragraph">{props.data.p1}</p>
+        <div className="content">
+          <Paragraph
+            cursive={props.data.title}
+            bold={props.data.b}
+            paragraph={props.data.p1}
+          />
           <div className="text-center">
             <EditButton
               user={props.user}
@@ -49,3 +51,5 @@ Home.propsTypes = {
   user: PropTypes.object.isRequired,
   updateState: PropTypes.func.isRequired
 }
+
+// <PageHeader className="home-header"><span className="header-text">Home<hr /></span></PageHeader>

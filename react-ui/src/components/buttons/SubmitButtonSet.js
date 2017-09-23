@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 //   LoginButton,
 // } = FBSDK;
 
-import { initial, messages } from '../../../../data/data';
+import { initial } from '../../../../data/data';
 
 import AlertMessage from './AlertMessage';
 import EditButton from './EditButton';
@@ -98,40 +98,24 @@ class SubmitButtonSet extends React.Component {
         <AlertMessage
           message={this.props.message}
         />
-        {
-          (this.props.message !== messages.expError) ?
-            <div>
-              {(edit.modalTitle.includes("Upcoming")) ?
-              <div>
-
-              </div>:
-              <button className={style} onClick={this.submit}>
-                {edit.modalTitle} <i className={this.getIcon(edit.modalTitle)} aria-hidden="true"></i>
-              </button>}
-
-              {(edit.modalTitle.includes("Login"))?
-                <span>
-                  <EditButton
-                    user={this.props.user}
-                    updateState={this.props.updateState}
-                    dataObj={{}}
-                    title="Sign Up"
-                  />
-                  <br />
-                  <br />
-                  <a href="https://young-mountain-46461.herokuapp.com/auth/facebook" className="btn btn-primary"><i className="fa fa-facebook"></i> Login with Facebook</a>
-                </span>:
-                <div></div>}
-            </div> :
-            <div>
+        <div>
+          <button className={style} onClick={this.submit}>
+            {edit.modalTitle} <i className={this.getIcon(edit.modalTitle)} aria-hidden="true"></i>
+          </button>
+          {(edit.modalTitle.includes("Login"))?
+            <span>
               <EditButton
                 user={this.props.user}
                 updateState={this.props.updateState}
                 dataObj={{}}
-                title="Login Again"
+                title="Sign Up"
               />
-            </div>
-        }
+              <br />
+              <br />
+              <a href="https://young-mountain-46461.herokuapp.com/auth/facebook" className="btn btn-primary"><i className="fa fa-facebook"></i> Login with Facebook</a>
+            </span>:
+            <span></span>}
+        </div>
       </div>
     );
   }
@@ -139,3 +123,14 @@ class SubmitButtonSet extends React.Component {
 
 
 export default SubmitButtonSet;
+
+// :
+// <div>
+//   <EditButton
+//     user={this.props.user}
+//     updateState={this.props.updateState}
+//     dataObj={{}}
+//     title="Login Again"
+//   />
+// </div>
+// }

@@ -10,13 +10,15 @@ import Select from './bookTabs/Select';
 import Pay from './bookTabs/Pay';
 import Bill from './bookTabs/Bill';
 import Confirm from './bookTabs/Confirm';
+import Paragraph from './Paragraph';
 import ContinueButton from '../buttons/ContinueButton';
-
+import EditButton from '../buttons/EditButton';
 
 // import EditButton from '../buttons/EditButton';
 class Book extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired,
     updateState: PropTypes.func.isRequired,
     getData: PropTypes.func.isRequired,
@@ -71,6 +73,7 @@ class Book extends React.Component {
   }
 
   render(){
+    // console.log("book props", this.props);
     const bill = this.props.user.cart.length > 0;
     const pay = this.props.user.billing.charAt(0) !== '/' && this.props.user.billing !== '';
     const conf = this.props.user.credit.charAt(0) !== '/' && this.props.user.credit !== '';
@@ -124,7 +127,7 @@ class Book extends React.Component {
         <PageHeader>
           <Row className="clear-fix">
             <Col sm={6}>
-              <span className="header-text">Book Your Stay </span>
+              <span className="header-text">Book </span>
             </Col>
             <Col sm={6} className="admin">
               {(this.props.user.admin) ?
@@ -138,7 +141,23 @@ class Book extends React.Component {
           </Row>
           <hr />
         </PageHeader>
+
         <div className="main-content">
+          {(this.props.content.title) ? <Paragraph
+            cursive={this.props.content.title}
+            bold={this.props.content.b}
+            paragraph={this.props.content.p1}
+          /> :
+          <div></div>}
+          <div className="text-center">
+            <EditButton
+              user={this.props.user}
+              dataObj={this.props.content}
+              updateState={this.props.updateState}
+              title="Edit Content"
+            />
+          </div>
+
           <div>
             <Row className="clear-fix">
               <Col sm={4} className="columns">

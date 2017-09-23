@@ -27,6 +27,7 @@ class App extends Component {
     gallery: PropTypes.object.isRequired,
     guide: PropTypes.object.isRequired,
     book: PropTypes.object.isRequired,
+    bookNow: PropTypes.object.isRequired,
     welcome: PropTypes.array.isRequired,
     message: PropTypes.string.isRequired,
     edit: PropTypes.object.isRequired
@@ -34,7 +35,7 @@ class App extends Component {
 
 
   render(){
-    const{ dispatch, user, home, gallery, guide, welcome, book, message, edit } = this.props;
+    const{ dispatch, user, home, gallery, guide, welcome, book, bookNow, message, edit } = this.props;
     //turns an object whose values are action creators (functions)
     //and wraps in dispatch (what causes state change)
 
@@ -46,21 +47,22 @@ class App extends Component {
     const uploadFile = bindActionCreators(AdminActionCreators.uploadFile, dispatch);
 
 
-    console.log("");
-    console.log("user", user);
-    console.log("home", home);
-    console.log("gallery", gallery);
-    console.log("guide", guide);
-    console.log("book", book);
-    console.log("welcome", welcome);
-    console.log("message", message);
-    console.log("edit", edit);
-    console.log(window.location);
+    // console.log("");
+    // console.log("user", user);
+    // console.log("home", home);
+    // console.log("gallery", gallery);
+    // console.log("guide", guide);
+    // console.log("book", book);
+    // console.log("bookNow", bookNow);
+    // console.log("welcome", welcome);
+    // console.log("message", message);
+    // console.log("edit", edit);
+    // console.log(window.location);
 
     const routes = (["home", "guide", "gallery", "gallery/:room"]).map((k) => {
       const key = (k.includes('/')) ? k.slice(0, k.indexOf('/')) : k;
 
-      if(k !== "guide" && k !== "book"){
+      if(k !== "guide"){
         return (
           <Route key={`route${k}`} exact path={(k === "home") ? "/" : `/${k}`} render={ () => (
             <Routes
@@ -106,7 +108,8 @@ class App extends Component {
             {routes}
             <Route path={"/book"} render={ () => (
               <Book
-                data={book}
+                data={bookNow}
+                content={book}
                 user={user}
                 getData={getData}
                 postData={postData}
@@ -128,6 +131,7 @@ class App extends Component {
                 user={user}
                 getData={getData}
                 updateState={updateState}
+                logout={(edit.dataObj.message === "confirm")}
               /> :
               <Redirect to="/" />)) }
             />
@@ -139,6 +143,7 @@ class App extends Component {
                 user={user}
                 postData={postData}
                 getData={getData}
+                updateState={updateState}
               />:
               <Redirect to="/" />) }
             />
@@ -150,6 +155,7 @@ class App extends Component {
                 user={user}
                 getData={getData}
                 updateState={updateState}
+                logout={(edit.dataObj.message === "confirm")}
               />:
               <Redirect to="/" />) }
             />
@@ -186,6 +192,7 @@ const mapStateToProps = state => (
     gallery: state.gallery,
     guide: state.guide,
     book: state.book,
+    bookNow: state.bookNow,
     welcome: state.welcome,
     message: state.message,
     edit: state.edit

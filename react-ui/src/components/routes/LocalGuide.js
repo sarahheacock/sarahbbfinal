@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Guide from './Guide';
 import EditButton from '../buttons/EditButton.js';
+import Paragraph from './Paragraph';
 
 import { Route, Redirect, Switch } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
@@ -40,10 +41,12 @@ const LocalGuide = (props) => {
 
   return (
     <div>
+      <Paragraph
+        cursive={props.data.title}
+        bold={props.data.b}
+        paragraph={props.data.p1}
+      />
       <div className="text-center">
-        <h3 className="pretty">{props.data.title}</h3>
-        <p><b className="paragraph">{props.data.b}</b></p>
-        <p className="paragraph">{props.data.p1}</p>
         <EditButton
           user={props.user}
           dataObj={props.data}

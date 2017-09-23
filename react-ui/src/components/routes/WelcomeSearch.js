@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { PageHeader } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-// import { Row, Col } from 'react-bootstrap';
+import EditButton from '../buttons/EditButton.js';
 import { Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 import { blogID } from '../../../../data/data';
@@ -29,9 +29,9 @@ class WelcomeSearch extends React.Component {
   //   window.location.pathname = `/welcome/${e.target.value}`
   // }
 
-  logout = (e) => {
-    this.props.getData('/auth/logout');
-  }
+  // logout = (e) => {
+  //   this.props.getData('/auth/logout');
+  // }
 
   handleChange = (e) => {
     // if(e) e.preventDefault();
@@ -62,7 +62,12 @@ class WelcomeSearch extends React.Component {
       <div className="main-content">
         <div className="text-center">
           <br />
-          <button className="buttonLarge blueButton" onClick={this.logout}>Logout <i className="fa fa-sign-out" aria-hidden="true"></i></button>
+          <EditButton
+            user={this.props.user}
+            dataObj={{}}
+            updateState={this.props.updateState}
+            title="Logout"
+          />
           <NavLink to="/welcome">
             <button className="buttonLarge orangeButton">Go to Calendar <i className="fa fa-calendar-check-o" aria-hidden="true"></i></button>
           </NavLink>

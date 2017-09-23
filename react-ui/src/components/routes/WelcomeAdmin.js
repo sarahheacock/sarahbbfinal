@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 import { PageHeader } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import EditButton from '../buttons/EditButton.js';
 
-import 'react-big-calendar/lib/css/react-big-calendar.css'
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 
@@ -35,9 +36,9 @@ class WelcomeAdmin extends React.Component {
     this.props.getData(url);
   }
 
-  logout = (e) => {
-    this.props.getData('/auth/logout');
-  }
+  // logout = (e) => {
+  //   this.props.getData('/auth/logout');
+  // }
 
   navigate = (date) => {
     const month = (date.getMonth() + 1).toString();
@@ -48,16 +49,17 @@ class WelcomeAdmin extends React.Component {
   }
 
   handleSelect = (event) => {
-    console.log(event);
+    // console.log(event);
     window.location.pathname = `/welcome/${event.event.user}`
   }
 
   getClassName = (event) => {
+    // console.log("class", event);
     let style = "blueButton";
 
     //if(event.reminded) style = "blueButton";
-    if(event.checkedIn || event.charged) style = "orangeButton";
-    if(event.reminded) style = "yellowButton";
+    if(event.event.checkedIn || event.event.charged) style = "orangeButton";
+    if(event.event.reminded) style = "yellowButton";
 
     const end = new Date(event.end).getTime();
     if(end < Date.now()) style += " old";
@@ -74,7 +76,12 @@ class WelcomeAdmin extends React.Component {
 
         <div className="text-center">
           <br />
-          <button className="buttonLarge blueButton" onClick={this.logout}>Logout <i className="fa fa-sign-out" aria-hidden="true"></i></button>
+          <EditButton
+            user={this.props.user}
+            dataObj={{}}
+            updateState={this.props.updateState}
+            title="Logout"
+          />
           <NavLink to="/welcome/search">
             <button className="buttonLarge orangeButton">Search for Client <i className="fa fa-search" aria-hidden="true"></i></button>
           </NavLink>

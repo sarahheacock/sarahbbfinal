@@ -362,7 +362,7 @@ var initial = {
   "home": {},
   "gallery": {},
   "guide": {},
-  "book": {
+  "bookNow": {
     "reservation": {
       "start": start,
       "end": end,
@@ -372,6 +372,7 @@ var initial = {
     },
     "available": []
   },
+  "book": {},
   "welcome": [],
   "message": '',
   "edit": {

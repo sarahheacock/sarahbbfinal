@@ -286,7 +286,21 @@ const authorizeUser = (req, res, next) => {
   if (token) { // decode token
     jwt.verify(token, superSecret, (err, decoded) => { // verifies secret and checks exp
       if (err) {
-        res.json({message: messages.expError, user: data.initial.user})
+        const dataObj = (Object.keys(loginData)).reduce((a, b) => {
+          a[b] = loginData[b]["default"];
+          return a;
+        }, {});
+
+        res.json({
+          message: messages.expError,
+          user: data.initial.user,
+          edit: {
+            url: '/login',
+            modalTitle: 'Login',
+            next: '#',
+            dataObj: dataObj
+          }
+        });
       }
       else { // if everything is good, save to request for use in other routes
         const userID = (req.page) ? req.page.userID : req.user.userID;

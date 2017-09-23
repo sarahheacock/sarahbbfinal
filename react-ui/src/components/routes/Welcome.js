@@ -15,6 +15,7 @@ import { blogID, initial } from '../../../../data/data';
 class Welcome extends React.Component {
   static propTypes = {
     user: PropTypes.object.isRequired,
+    logout: PropTypes.bool.isRequired,
     data: PropTypes.array.isRequired,
     getData: PropTypes.func.isRequired,
     updateState: PropTypes.func.isRequired,
@@ -47,7 +48,9 @@ class Welcome extends React.Component {
   }
 
   componentWillUnmount(){
-    if(this.props.user.admin){
+    //ADD A KEY THAT SAYS IF EDIT DATAOBJ HAS KEY X
+    //(USER IS LOGGING OUT)
+    if(this.props.user.admin && !this.props.logout){
       this.props.updateState({
         user: {
           ...initial.user,
@@ -190,7 +193,7 @@ class Welcome extends React.Component {
                   {(this.props.user.admin && this.props.data.length > 0) ?
                     <div>
                       <br />
-                      <button className="button blueButton" onClick={this.check}>{(this.props.data[0]["notes"] === true) ? "Uncheck All" : "Check All"}</button>
+                      <button className="button yellowButton" onClick={this.check}>{(this.props.data[0]["notes"] === true) ? "Uncheck All" : "Check All"}</button>
                     </div>:
                     <div></div>
                   }

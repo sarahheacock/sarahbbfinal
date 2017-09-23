@@ -34,7 +34,7 @@ pageRoutes.param("pageID", (req, res, next, id) => {
 
 const format = (obj) => {
   let newObj = {edit: initialEdit, message: initialMessage};
-  const arr = ["home", "gallery", "guide"];
+  const arr = ["home", "gallery", "guide", "book"];
 
   arr.forEach((k) => {
     newObj[k] = obj[k]

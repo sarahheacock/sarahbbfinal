@@ -1,6 +1,8 @@
 import * as AdminActionTypes from '../actiontypes/admin';
 import Edit from './Edit';
 
+import { messages } from '../../../data/data';
+
 //==============================================================
 //state={} is overwritten by initialState provided in index.js
 export default function Admin(state={}, action){
@@ -9,6 +11,7 @@ export default function Admin(state={}, action){
     case AdminActionTypes.UPDATE_STATE: {
       if(action.newState.message === "confirm" && !state.user.admin) window.location.pathname = "/welcome";
       if(action.newState.message === "confirm" && state.user.admin) window.location.pathname = `/welcome/${state.user._id}`;
+      if(action.newState.message === messages.expError) alert(action.newState.message);
 
       if(Object.keys(action.newState).includes("dataObj")){ //sent by EditButton
         let edit = new Edit(action.newState.title);

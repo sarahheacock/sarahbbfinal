@@ -41,7 +41,7 @@ const formatOutput = (req, res, next) => {
 
   //let welcome = data.initial.welcome;
   let user = {};
-  let book = data.initial.book;
+  let bookNow = data.initial.bookNow;
 
   const message = (req.message) ? req.message : data.initial.message;
 
@@ -81,18 +81,18 @@ const formatOutput = (req, res, next) => {
 
 
   if(req.available){
-    book.reservation.start = req.start;
-    book.reservation.end = req.end;
-    book.reservation.guests = req.guests;
+    bookNow.reservation.start = req.start;
+    bookNow.reservation.end = req.end;
+    bookNow.reservation.guests = req.guests;
 
-    book.available = req.available;
+    bookNow.available = req.available;
   }
 
   //if(req.welcome) welcome = req.welcome;
   //else if(req.reservations) welcome = req.reservations;
   let obj = {
     message: message,
-    book: book
+    bookNow: bookNow
   };
 
   if(!message) obj.edit = data.initial.edit;

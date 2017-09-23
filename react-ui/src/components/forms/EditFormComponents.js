@@ -36,7 +36,6 @@ const Months = ["Jan 01", "Feb 02", "Mar 03", "Apr 04",
 const Year = new Date().getFullYear();
 
 const EditForm = (props) => {
-  console.log(props);
   const formObj = hash[props.title];
 
   const check = (k) => {

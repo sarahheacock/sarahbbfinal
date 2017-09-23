@@ -8,6 +8,7 @@ import { Image, CloudinaryContext, Transformation } from 'cloudinary-react';
 
 import { cloudName } from '../../../../data/data';
 import EditButton from '../buttons/EditButton.js';
+import Paragraph from './Paragraph';
 //import Room from './Room';
 
 const link = (cat) => {
@@ -72,10 +73,12 @@ const Gallery = (props) => {
   ));
 
   return (
-    <div className="text-center">
-      <h3 className="pretty">{props.data.title}</h3>
-      <p><b className="paragraph">{props.data.b}</b></p>
-      <p className="paragraph">{props.data.p1}</p>
+    <div className="">
+      <Paragraph
+        cursive={props.data.title}
+        bold={props.data.b}
+        paragraph={props.data.p1}
+      />
       <div className="text-center">
         <EditButton
           user={props.user}
@@ -84,7 +87,6 @@ const Gallery = (props) => {
           title="Edit Content"
         />
       </div>
-      <br />
       <div>{gallery}</div>
       <div className="text-center">
         <EditButton

@@ -27,7 +27,6 @@ const EditForm = (props) => {
     /> :
     Object.keys(props.edit.dataObj).map(k => {
       if(k === "carousel"){
-        console.log(props.edit.dataObj[k]);
         return props.edit.dataObj[k].map((j, i) => (
           <EditFormComponents
             key={`${i}car`}

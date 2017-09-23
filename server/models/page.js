@@ -217,6 +217,11 @@ const PageSchema = new Schema({
     b: {type: String, default: "We are excited to have you!"},
     p1: {type: String, default: "We are excited to have you!"},
     guide: {type: [LocalGuideSchema], default: [LocalGuideSchema]}
+  },
+  book: {
+    title: {type: String, default: "Welcome to our bed and breakfast..."},
+    b: {type: String, default: "We are excited to have you!"},
+    p1: {type: String, default: "We are excited to have you!"}
   }
 });
 

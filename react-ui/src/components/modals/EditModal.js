@@ -30,7 +30,7 @@ class EditModal extends React.Component {
   }
 
   onFormChange = (e) => {
-    console.log(e.target);
+    // console.log(e.target);
 
     let dataObj = {...this.props.edit.dataObj};
     const nameArr = e.target.name.split("-");
@@ -90,7 +90,7 @@ class EditModal extends React.Component {
 
     let formData = new FormData();
     formData.append('file', file);
-    console.log('file', formData.get('file'));
+    // console.log('file', formData.get('file'));
 
     this.props.uploadFile({
       url: `/file?token=${this.props.user.token}`,
