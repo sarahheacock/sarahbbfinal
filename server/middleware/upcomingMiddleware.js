@@ -17,16 +17,14 @@ const mg = require('nodemailer-mailgun-transport');
 // This is your API key that you retrieve from www.mailgun.com/cp (free up to 10K monthly emails)
 const auth = {
   auth: {
-    api_key: 'key-8fe0080d32719b30edaa3ac4f24ae053',
-    domain: 'sandboxfc3e27202a7c46a084548a6462c6fa6a.mailgun.org'
+
   }
 }
 const nodemailerMailgun = nodemailer.createTransport(mg(auth));
 
 const Twilio = require('twilio');
 const textClient = new Twilio(
-  'AC78f4cac2211a9b4289ce01afd4b2d077',
-  'a4f27ac774519b870f03b2ffae392fab'
+
 );
 
 //============================================================
@@ -103,7 +101,7 @@ const sendMessage = (req, res, next) => {
 
         if(phone !== false){
           textClient.messages.create({
-            from: '+16156453672',
+            from: ,
             to: phone,
             body: messageObj.body
           }, (error, message) => {
