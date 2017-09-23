@@ -119,7 +119,7 @@ class SubmitButtonSet extends React.Component {
                   />
                   <br />
                   <br />
-                  <a href="https://sarahbb.herokuapp.com/auth/facebook" className="btn btn-primary"><i className="fa fa-facebook"></i> Login with Facebook</a>
+                  <a href="https://young-mountain-46461.herokuapp.com/auth/facebook" className="btn btn-primary"><i className="fa fa-facebook"></i> Login with Facebook</a>
                 </span>:
                 <div></div>}
             </div> :
