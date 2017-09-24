@@ -11,14 +11,14 @@ import PropTypes from 'prop-types';
 const Paragraph = (props) => {
 
   const paragraph = props.paragraph.split('\n').map((b, i) => {
-    return(<p className="" key={`paragraph${i}`}>{b}</p>);
+    return(<h4 className="" key={`paragraph${i}`}>{b}</h4>);
   });
 
   return (
     <div className="paragraph">
       <hr />
       <h3 className="pretty text-center">{props.cursive}</h3>
-      <b className="">{props.bold}</b>
+      <h4><b className="">{props.bold}</b></h4>
       {paragraph}
       <hr />
     </div>
